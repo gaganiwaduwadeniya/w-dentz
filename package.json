@@ -1,0 +1,17 @@
+{
+  "name": "wdentz-full-stack",
+  "version": "1.0.0",
+  "description": "W Dentz - Dental Clinic Full Stack Application",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "client:dev": "cd client && npm run dev",
+    "server:dev": "cd server && npm run dev",
+    "client:build": "cd client && npm run build",
+    "build": "npm run client:build",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
