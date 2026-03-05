@@ -1,13 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiArrowRight, HiPlay } from 'react-icons/hi';
-import { FiShield, FiAward, FiUsers } from 'react-icons/fi';
+import { FaFacebook, FaTiktok } from 'react-icons/fa';
 import './Hero.css';
 
-const stats = [
-    { icon: <FiUsers />, value: '15K+', label: 'Happy Patients' },
-    { icon: <FiAward />, value: '20+', label: 'Years Experience' },
-    { icon: <FiShield />, value: '99%', label: 'Success Rate' },
+const socialLinks = [
+    {
+        id: 1,
+        name: 'Facebook',
+        icon: <FaFacebook />,
+        url: 'https://facebook.com/wdentz',
+    },
+    {
+        id: 2,
+        name: 'TikTok',
+        icon: <FaTiktok />,
+        url: 'https://tiktok.com/@wdentz',
+    },
 ];
 
 const Hero = () => {
@@ -38,9 +47,9 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        Your Smile,{' '}
-                        <span className="hero__title-gradient">Redefined</span>{' '}
-                        by Technology
+                        Smile{' '}
+                        <span className="hero__title-gradient">Forever</span>{' '}
+                        
                     </motion.h1>
 
                     <motion.p
@@ -49,10 +58,12 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        Experience the future of dentistry at W Dentz. We combine
-                        cutting-edge AI diagnostics, 3D imaging, and precision laser
-                        treatments to deliver a dental experience unlike anything you've
-                        ever known.
+                    Your smile is our greatest achievement. 
+                    At W Dentz, we blend advanced dental science 
+                    with a genuine passion for patient 
+                    care — creating an experience that 
+                    goes beyond the ordinary. Because you 
+                    deserve a smile that speaks before you even say a word.
                     </motion.p>
 
                     <motion.div
@@ -64,26 +75,32 @@ const Hero = () => {
                         <a href="#contact" className="btn-primary">
                             Book Consultation <HiArrowRight />
                         </a>
-                        <a href="#about" className="btn-secondary">
+                       {/* <a href="#about" className="btn-secondary">
                             <HiPlay /> Watch How It Works
-                        </a>
+                        </a> */}
                     </motion.div>
 
-                    {/* Stats */}
+                    {/* Social Media Links */}
                     <motion.div
-                        className="hero__stats"
+                        className="hero__social"
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
                     >
-                        {stats.map((stat, index) => (
-                            <div key={index} className="hero__stat">
-                                <div className="hero__stat-icon">{stat.icon}</div>
-                                <div className="hero__stat-info">
-                                    <span className="hero__stat-value">{stat.value}</span>
-                                    <span className="hero__stat-label">{stat.label}</span>
-                                </div>
-                            </div>
+                        {socialLinks.map((social, index) => (
+                            <a
+                                key={social.id}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hero__social-link"
+                                title={social.name}
+                                style={{
+                                    transitionDelay: `${index * 0.1}s`,
+                                }}
+                            >
+                                {social.icon}
+                            </a>
                         ))}
                     </motion.div>
                 </div>
@@ -138,14 +155,45 @@ const Hero = () => {
                             <circle cx="100" cy="200" r="3" fill="#2979ff" opacity="0.8" className="hero__data-point" />
                         </svg>
 
-                        {/* Floating data badges */}
-                        <div className="hero__data-badge hero__data-badge--1">
-                            <span className="hero__data-badge-dot hero__data-badge-dot--green" />
-                            AI Scan: Clear
+                        {/* Floating AI particles */}
+                        <div className="hero__particles">
+                            <div className="hero__particle hero__particle--1" />
+                            <div className="hero__particle hero__particle--2" />
+                            <div className="hero__particle hero__particle--3" />
+                            <div className="hero__particle hero__particle--4" />
+                            <div className="hero__particle hero__particle--5" />
                         </div>
-                        <div className="hero__data-badge hero__data-badge--2">
-                            <span className="hero__data-badge-dot hero__data-badge-dot--blue" />
-                            3D Mapped
+
+                        {/* DNA Helix */}
+                        <svg className="hero__dna-helix" viewBox="0 0 100 200" fill="none">
+                            <defs>
+                                <linearGradient id="dnaGrad" x1="0" y1="0" x2="100" y2="200">
+                                    <stop offset="0%" stopColor="#00e5ff" />
+                                    <stop offset="100%" stopColor="#7c4dff" />
+                                </linearGradient>
+                            </defs>
+                            {/* Helix strands */}
+                            <path d="M 50 10 Q 70 30 50 50 Q 30 70 50 90 Q 70 110 50 130 Q 30 150 50 170" stroke="url(#dnaGrad)" strokeWidth="1.5" opacity="0.6" />
+                            <path d="M 50 10 Q 30 30 50 50 Q 70 70 50 90 Q 30 110 50 130 Q 70 150 50 170" stroke="url(#dnaGrad)" strokeWidth="1.5" opacity="0.6" />
+                            {/* Connection nodes */}
+                            <circle cx="50" cy="30" r="2" fill="#00e5ff" opacity="0.7" />
+                            <circle cx="50" cy="70" r="2" fill="#2979ff" opacity="0.7" />
+                            <circle cx="50" cy="110" r="2" fill="#7c4dff" opacity="0.7" />
+                            <circle cx="50" cy="150" r="2" fill="#00e5ff" opacity="0.7" />
+                        </svg>
+
+                        {/* Tech grid overlay */}
+                        <div className="hero__tech-grid">
+                            <svg viewBox="0 0 100 100" fill="none">
+                                <line x1="25" y1="0" x2="25" y2="100" stroke="#00e5ff" strokeWidth="0.5" opacity="0.15" />
+                                <line x1="50" y1="0" x2="50" y2="100" stroke="#00e5ff" strokeWidth="0.5" opacity="0.15" />
+                                <line x1="75" y1="0" x2="75" y2="100" stroke="#00e5ff" strokeWidth="0.5" opacity="0.15" />
+                                <line x1="0" y1="25" x2="100" y2="25" stroke="#00e5ff" strokeWidth="0.5" opacity="0.15" />
+                                <line x1="0" y1="50" x2="100" y2="50" stroke="#00e5ff" strokeWidth="0.5" opacity="0.15" />
+                                <line x1="0" y1="75" x2="100" y2="75" stroke="#00e5ff" strokeWidth="0.5" opacity="0.15" />
+                                <circle cx="25" cy="25" r="1" fill="#2979ff" opacity="0.4" />
+                                <circle cx="75" cy="75" r="1" fill="#7c4dff" opacity="0.4" />
+                            </svg>
                         </div>
                     </div>
                 </motion.div>

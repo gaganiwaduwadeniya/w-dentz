@@ -1,27 +1,31 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './About.css';
+import machine from '../../assets/images/machine.jpg';
+import brush from '../../assets/images/brush.jpg';
+import treatment from '../../assets/images/tooth.jpg';
+import team from '../../assets/images/doctor.jpg';
 
 const galleryImages = [
     {
         id: 1,
-        title: 'Modern Clinic',
-        url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=500&fit=crop',
+        title: 'Advanced Equipment',
+        url: machine,
     },
     {
         id: 2,
-        title: 'Advanced Equipment',
-        url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop',
+        title: 'Oral Wellness',
+        url: brush,
     },
     {
         id: 3,
-        title: 'Treatment Room',
-        url: 'https://images.unsplash.com/photo-1642909127882-f67fba0c4c18?w=500&h=500&fit=crop',
+        title: 'Clinical Excellence',
+        url: treatment,
     },
     {
         id: 4,
-        title: 'Expert Team',
-        url: 'https://images.unsplash.com/photo-1631217314831-c02b2e9de096?w=500&h=500&fit=crop',
+        title: 'Expert Doctors',
+        url: team,
     },
 ];
 
@@ -44,17 +48,23 @@ const About = () => {
                         <span className="section-label">About Us</span>
                         <div className="about__title-year">
                             <h2 className="section-title">
-                                Where Innovation Meets<br />Dental Excellence
+                                Beyond Dentistry <br />A Standard of Excellence
                             </h2>
                             <div className="about__year-badge">
-                                <span className="about__year-number">2005</span>
+                                <span className="about__year-number">2023</span>
                                 <span className="about__year-text">Est.</span>
                             </div>
                         </div>
                         <p className="section-subtitle">
-                            Founded in 2005, W Dentz has been pioneering the fusion of
-                            advanced technology and compassionate dental care for over two
-                            decades. We don't just treat teeth — we engineer smiles.
+                        Founded in 2023,W Dentz is committed to providing top-notch care 
+                        in a warm and welcoming environment. We prioritize patient 
+                        safety and satisfaction, and our team works diligently to 
+                        ensure your dental experience is as comfortable as possible.
+                        If you are experiencing dental pain, discomfort, or any other 
+                        dental issues that might require a tooth extraction, or any 
+                        other related services don't hesitate to schedule an appointment 
+                        with us. We are here to restore your oral health and keep your 
+                        smile shining bright.
                         </p>
                     </motion.div>
                 </div>

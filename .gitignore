@@ -1,0 +1,75 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables (SENSITIVE - never commit!)
+.env
+.env.local
+.env.*.local
+.env.production.local
+.env.development.local
+
+# Firebase credentials (SENSITIVE - never commit!)
+serviceAccountKey.json
+*.key.json
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+.sublime-project
+.sublime-workspace
+
+# OS files
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.pid
+*.seed
+
+# Temporary files
+tmp/
+temp/
+.cache/
+.parcel-cache/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Editor backup files
+*.bak
+*.backup
+*~
+
+# OS generated files
+.env.example.backup
+*.orig
+
+# Optional IDE settings
+.vscode/settings.json
+.vscode/extensions.json
+
+# Miscellaneous
+.DS_Store
+*.pem
+.env.local.backup

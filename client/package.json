@@ -1,4 +1,5 @@
 {
+    "homepage": "https://gaganiwaduwadeniya.github.io/w-dentz",
     "name": "wdentz-client",
     "private": true,
     "version": "1.0.0",
@@ -6,15 +7,18 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
+        "axios": "^1.7.7",
+        "firebase": "^12.10.0",
+        "framer-motion": "^11.3.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-router-dom": "^6.26.0",
         "react-icons": "^5.3.0",
-        "framer-motion": "^11.3.0",
-        "axios": "^1.7.7"
+        "react-router-dom": "^6.26.0"
     },
     "devDependencies": {
         "@types/react": "^18.3.3",
