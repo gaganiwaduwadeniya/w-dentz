@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
     FiStar, FiSun, FiGrid, FiActivity,
-    FiSmile, FiArrowUpRight
+    FiSmile, FiArrowUpRight, FiTool, FiZap
 } from 'react-icons/fi';
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { RiSurgicalMaskLine } from 'react-icons/ri';
@@ -10,46 +10,62 @@ import './Services.css';
 
 const services = [
     {
-        icon: <FiStar />,
-        title: 'AI-Powered Diagnosis',
-        description: 'Our advanced neural networks analyze dental imaging to detect cavities, fractures, and abnormalities with unprecedented accuracy.',
+        icon: <FiTool />,
+        title: 'Restorations (Dental fillings)',
+        description: 'Durable and natural-looking fillings that repair cavities and restore damaged teeth, bringing back full function and a healthy smile.',
         tag: 'Most Popular',
+        color: '#e040fb',
+        tagColor: '#00e5ff',
+    },
+    {
+        icon: <FiStar />,
+        title: 'Dental Extractions',
+        description: 'Safe and gentle removal of damaged, decayed, or problematic teeth to relieve pain and protect your overall oral health.',
+        tag: null,
         color: '#00e5ff',
     },
     {
         icon: <FiSun />,
-        title: 'Laser Teeth Whitening',
-        description: 'Professional-grade laser whitening that delivers up to 8 shades brighter in a single session — painless and long-lasting.',
+        title: 'Crown and Bridges',
+        description: 'Custom-crafted crowns and bridges that restore the strength, appearance, and function of missing or damaged teeth for a seamless smile.',
         tag: null,
         color: '#2979ff',
     },
     {
         icon: <FiGrid />,
-        title: 'Digital Smile Design',
-        description: 'Preview your perfect smile with our 3D visualization technology before any treatment begins. Plan with confidence.',
-        tag: 'New',
+        title: 'Root Canal Treatment',
+        description: 'A pain-relieving procedure that removes infected pulp from inside the tooth, saving your natural tooth while eliminating discomfort.',
+        tag: null,
         color: '#7c4dff',
     },
     {
         icon: <FiActivity />,
-        title: 'Robotic Implants',
-        description: 'Computer-guided implant placement for precision down to 0.1mm. Faster healing, perfect positioning, guaranteed results.',
+        title: 'Dental Scaling',
+        description: 'A professional deep-cleaning treatment that removes plaque and tartar buildup from teeth and gumlines, keeping gum disease at bay.',
         tag: null,
         color: '#1de9b6',
     },
     {
         icon: <HiOutlineSparkles />,
-        title: 'Cosmetic Veneers',
-        description: 'Ultra-thin porcelain veneers crafted with CAD/CAM technology for a flawless, natural-looking transformation.',
+        title: 'Dentures',
+        description: 'Comfortable, natural-looking removable dentures crafted to replace missing teeth and restore your confidence in eating and smiling.',
         tag: null,
         color: '#ff6d00',
     },
     {
-        icon: <FiSmile />,
-        title: 'Orthodontics & Aligners',
-        description: 'Invisible aligners designed using AI biomechanics for faster, more comfortable teeth straightening.',
+        icon: <RiSurgicalMaskLine />,
+        title: 'Minor Oral Surgeries',
+        description: 'Minimally invasive surgical procedures performed with precision and care to address a range of oral conditions in a safe clinical setting.',
         tag: null,
-        color: '#e040fb',
+        color: '#ff1744',
+    },
+    {
+        icon: <FiZap />,
+        title: 'Teeth Whitening',
+        description: 'A safe and effective professional whitening treatment that removes stains and discoloration, leaving you with a brighter, more radiant smile.',
+        tag: 'New',
+        color: '#00bfa5',
+        tagColor: '#ff6d00',
     },
 ];
 
@@ -90,11 +106,11 @@ const Services = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            {service.tag && (
-                                <span className="services__card-tag" style={{ background: `${service.color}20`, color: service.color, borderColor: `${service.color}40` }}>
-                                    {service.tag}
-                                </span>
-                            )}
+                        {service.tag && (
+                            <span className="services__card-tag" style={{ background: `${service.tagColor || service.color}20`, color: service.tagColor || service.color, borderColor: `${service.tagColor || service.color}40` }}>
+                                {service.tag}
+                            </span>
+                        )}
 
                             <div className="services__card-icon" style={{ color: service.color, background: `${service.color}10`, borderColor: `${service.color}25` }}>
                                 {service.icon}
