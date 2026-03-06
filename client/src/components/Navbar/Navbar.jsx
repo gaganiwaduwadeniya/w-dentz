@@ -88,13 +88,14 @@ const Navbar = () => {
                 </ul>
 
                 {/* CTA */}
-                <a
+                {/* Removed - kept as single point of contact on home hero */}
+                {/* <a
                     href="#contact"
                     className="navbar__cta btn-primary"
                     onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
                 >
                     Book Appointment
-                </a>
+                </a> */}
 
                 {/* Mobile toggle */}
                 <button className="navbar__toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
