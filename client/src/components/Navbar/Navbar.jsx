@@ -87,15 +87,14 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-                {/* CTA */}
-                {/* Removed - kept as single point of contact on home hero */}
-                {/* <a
-                    href="#contact"
+                {/* CTA Button - Highlighted on right */}
+                <a
+                    href="#appointments"
                     className="navbar__cta btn-primary"
-                    onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
+                    onClick={(e) => { e.preventDefault(); handleNavClick('#appointments'); }}
                 >
                     Book Appointment
-                </a> */}
+                </a>
 
                 {/* Mobile toggle */}
                 <button className="navbar__toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
@@ -127,10 +126,10 @@ const Navbar = () => {
                             </motion.a>
                         ))}
                         <a
-                            href="#contact"
+                            href="#appointments"
                             className="btn-primary"
                             style={{ marginTop: '16px', width: '100%', justifyContent: 'center' }}
-                            onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
+                            onClick={(e) => { e.preventDefault(); handleNavClick('#appointments'); }}
                         >
                             Book Appointment
                         </a>

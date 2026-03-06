@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 20px;
 }
 
 /* Logo */
@@ -81,8 +81,6 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    flex: 1;
-    justify-content: center;
 }
 
 .navbar__link {
@@ -120,7 +118,14 @@
     box-shadow: 0 0 12px rgba(0, 229, 255, 0.8);
 }
 
-/* CTA removed - using hero button instead */
+/* CTA Button */
+.navbar__cta {
+    padding: 12px 24px !important;
+    font-size: 0.9rem !important;
+    border-radius: 50px !important;
+    white-space: nowrap;
+    margin-left: -290px;
+}
 
 /* Toggle */
 .navbar__toggle {
@@ -178,6 +183,10 @@
 @media (max-width: 900px) {
     .navbar__links {
         display: none;
+    }
+
+    .navbar__cta {
+        display: none !important;
     }
 
     .navbar__toggle {

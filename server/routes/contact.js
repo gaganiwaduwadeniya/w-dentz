@@ -6,11 +6,11 @@ const router = express.Router();
 // POST /api/contact - Submit a contact form
 router.post('/', async (req, res) => {
     try {
-        const { name, email, phone, service, message } = req.body;
-        const newContact = await Contact.create({ name, email, phone, service, message });
+        const { name, email, phone, service, date, time, message } = req.body;
+        const newContact = await Contact.create({ name, email, phone, service, date, time, message });
         res.status(201).json({
             success: true,
-            message: 'Thank you! Your message has been received. We will get back to you shortly.',
+            message: 'Thank you! Your appointment has been submitted. We will confirm shortly.',
             data: newContact,
         });
     } catch (error) {

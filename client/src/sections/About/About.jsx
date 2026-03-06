@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { FaGraduationCap, FaTrophy, FaCertificate, FaStethoscope } from 'react-icons/fa';
 import './About.css';
 import machine from '../../assets/images/machine.jpg';
 import brush from '../../assets/images/brush.jpg';
@@ -97,31 +98,42 @@ const About = () => {
                     </motion.div>
                 </div>
 
-                {/* Trust Strip */}
+                {/* Doctor Credentials Strip */}
                 <motion.div
-                    className="about__trust"
+                    className="about__doctor-credentials"
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <div className="about__trust-item">
-                        <span className="about__trust-number">25+</span>
-                        <span className="about__trust-label">Expert Doctors</span>
+                    <div className="about__doctor-header">
+                        <h3>Meet Your Dentist</h3>
                     </div>
-                    <div className="about__trust-divider" />
-                    <div className="about__trust-item">
-                        <span className="about__trust-number">50K+</span>
-                        <span className="about__trust-label">Procedures Done</span>
-                    </div>
-                    <div className="about__trust-divider" />
-                    <div className="about__trust-item">
-                        <span className="about__trust-number">12</span>
-                        <span className="about__trust-label">Awards Won</span>
-                    </div>
-                    <div className="about__trust-divider" />
-                    <div className="about__trust-item">
-                        <span className="about__trust-number">3</span>
-                        <span className="about__trust-label">Locations</span>
+                    
+                    <div className="about__credentials-grid">
+                        <div className="about__credential-item">
+                            <div className="about__credential-icon">
+                                <FaStethoscope />
+                            </div>
+                            <span className="about__credential-title">Dr. Sammani Pathiranage</span>
+                            <span className="about__credential-subtitle">SLMC Reg no : 3291</span>
+                        </div>
+                        
+                        <div className="about__credential-item">
+                            <div className="about__credential-icon">
+                                <FaGraduationCap />
+                            </div>
+                            <span className="about__credential-title">Bachelor of Dental Surgery</span>
+                            <span className="about__credential-subtitle">University of Peradeniya</span>
+                        </div>
+                        
+                        <div className="about__credential-item">
+                            <div className="about__credential-icon">
+                                <FaTrophy />
+                            </div>
+                            <span className="about__credential-title">5+ Years</span>
+                            <span className="about__credential-subtitle">Clinical Experience</span>
+                        </div>
+                        
                     </div>
                 </motion.div>
             </div>

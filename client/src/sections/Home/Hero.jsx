@@ -72,7 +72,8 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        <a href="#contact" className="btn-primary">
+                        <p className="hero__consultation-text">Don't know what your teeth need? Let's figure it out together.</p>
+                        <a href="#appointments" className="btn-primary">
                             Book Consultation <HiArrowRight />
                         </a>
                        {/* <a href="#about" className="btn-secondary">

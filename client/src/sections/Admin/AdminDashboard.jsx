@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { auth } from '../../firebaseConfig';
 import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { FiLogOut, FiDownload, FiTrash2, FiSearch } from 'react-icons/fi';
+import { FiLogOut, FiDownload, FiTrash2, FiSearch, FiCalendar } from 'react-icons/fi';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -12,6 +13,7 @@ const AdminDashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filterService, setFilterService] = useState('all');
     const [sortBy, setSortBy] = useState('newest');
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchContacts();
@@ -43,12 +45,14 @@ const AdminDashboard = () => {
     };
 
     const exportToCSV = () => {
-        const headers = ['Name', 'Email', 'Phone', 'Service', 'Message', 'Date'];
+        const headers = ['Name', 'Email', 'Phone', 'Service', 'Appointment Date', 'Appointment Time', 'Message', 'Submitted Date'];
         const rows = filteredContacts.map(c => [
             c.name,
             c.email,
             c.phone || 'N/A',
             c.service || 'N/A',
+            c.date ? new Date(c.date).toLocaleDateString() : 'N/A',
+            c.time || 'N/A',
             `"${c.message}"`,
             new Date(c.createdAt).toLocaleString()
         ]);
@@ -95,9 +99,18 @@ const AdminDashboard = () => {
             <div className="admin-dashboard__header">
                 <div className="admin-dashboard__title-bar">
                     <h1 className="admin-dashboard__title">Contact Inquiries Dashboard</h1>
-                    <button onClick={handleLogout} className="btn-logout" title="Logout">
-                        <FiLogOut /> Logout
-                    </button>
+                    <div className="admin-dashboard__actions">
+                        <button 
+                            onClick={() => navigate('/admin/availability')} 
+                            className="btn-availability" 
+                            title="Manage Availability"
+                        >
+                            <FiCalendar /> Availability
+                        </button>
+                        <button onClick={handleLogout} className="btn-logout" title="Logout">
+                            <FiLogOut /> Logout
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -182,8 +195,10 @@ const AdminDashboard = () => {
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Service</th>
+                                    <th>Appointment Date</th>
+                                    <th>Appointment Time</th>
                                     <th>Message</th>
-                                    <th>Date</th>
+                                    <th>Date Submitted</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -194,6 +209,12 @@ const AdminDashboard = () => {
                                         <td>{contact.email}</td>
                                         <td>{contact.phone || '—'}</td>
                                         <td>{contact.service || '—'}</td>
+                                        <td className="date-cell">
+                                            {contact.date ? new Date(contact.date).toLocaleDateString() : '—'}
+                                        </td>
+                                        <td className="time-cell">
+                                            {contact.time || '—'}
+                                        </td>
                                         <td className="message-cell" title={contact.message}>
                                             {contact.message.substring(0, 40)}...
                                         </td>

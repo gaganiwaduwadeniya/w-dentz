@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { db } from './config/firebase.js';
 import contactRoutes from './routes/contact.js';
+import availabilityRoutes from './routes/availability.js';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/contact', contactRoutes);
+app.use('/api/availability', availabilityRoutes);
 
 // Health check
 app.get('/api/health', async (req, res) => {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiInstagram, FiTwitter, FiFacebook, FiLinkedin, FiArrowUp } from 'react-icons/fi';
+import { FiFacebook, FiArrowUp } from 'react-icons/fi';
+import { FaTiktok } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -27,14 +28,12 @@ const Footer = () => {
                             <span>W <span className="footer__logo-highlight">Dentz</span></span>
                         </div>
                         <p className="footer__tagline">
-                            Redefining dental care with cutting-edge technology.
-                            Your smile is our innovation.
+                            Where Diagnosis Meets Craftsmanship.
+                            Smile Forever.
                         </p>
                         <div className="footer__social">
-                            <a href="#" className="footer__social-link" aria-label="Instagram"><FiInstagram /></a>
-                            <a href="#" className="footer__social-link" aria-label="Twitter"><FiTwitter /></a>
-                            <a href="#" className="footer__social-link" aria-label="Facebook"><FiFacebook /></a>
-                            <a href="#" className="footer__social-link" aria-label="LinkedIn"><FiLinkedin /></a>
+                            <a href="https://facebook.com/wdentz" target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="Facebook"><FiFacebook /></a>
+                            <a href="https://tiktok.com/@wdentz" target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="TikTok"><FaTiktok /></a>
                         </div>
                     </div>
 
@@ -53,10 +52,14 @@ const Footer = () => {
                     <div className="footer__col">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="#services">AI Diagnosis</a></li>
-                            <li><a href="#services">Laser Whitening</a></li>
-                            <li><a href="#services">Digital Smile Design</a></li>
-                            <li><a href="#services">Robotic Implants</a></li>
+                            <li><a href="#services">Restorations (Dental fillings)</a></li>
+                            <li><a href="#services">Dental Extractions</a></li>
+                            <li><a href="#services">Crown and Bridges</a></li>
+                            <li><a href="#services">Root Canal Treatment</a></li>
+                            <li><a href="#services">Dental Scaling</a></li>
+                            <li><a href="#services">Dentures</a></li>
+                            <li><a href="#services">Minor Oral Surgeries</a></li>
+                            <li><a href="#services">Teeth Whitening</a></li>
                         </ul>
                     </div>
 
@@ -64,10 +67,10 @@ const Footer = () => {
                     <div className="footer__col">
                         <h4>Contact</h4>
                         <ul>
-                            <li>123 Innovation Drive</li>
-                            <li>San Francisco, CA 94107</li>
-                            <li>+1 (555) 234-5678</li>
-                            <li>info@wdentz.com</li>
+                            <li>W Dentz</li>
+                            <li>Princess Park, Malimbada, Matara</li>
+                            <li>+94 (70) 704 7070</li>
+                            <li>www.wdentz@gmail.com</li>
                         </ul>
                     </div>
                 </div>

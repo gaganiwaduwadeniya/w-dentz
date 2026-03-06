@@ -10,7 +10,7 @@ const Contact = {
     /**
      * Validate and create a new contact document
      */
-    async create({ name, email, phone, service, message }) {
+    async create({ name, email, phone, service, date, time, message }) {
         // Validation
         const errors = [];
         if (!name || !name.trim()) errors.push('Name is required');
@@ -31,6 +31,8 @@ const Contact = {
             email: email.trim().toLowerCase(),
             phone: phone?.trim() || '',
             service: service?.trim() || '',
+            date: date?.trim() || '',
+            time: time?.trim() || '',
             message: message.trim(),
             createdAt: new Date().toISOString(),
         };

@@ -9,16 +9,19 @@ yarn.lock
 .env.*.local
 .env.production.local
 .env.development.local
+.env.*.backup
 
 # Firebase credentials (SENSITIVE - never commit!)
 serviceAccountKey.json
 *.key.json
+server/serviceAccountKey.json
 
 # Build outputs
 dist/
 build/
 .next/
 out/
+.vite/
 
 # IDE & Editor files
 .vscode/
@@ -30,12 +33,15 @@ out/
 .DS_Store
 .sublime-project
 .sublime-workspace
+*.code-workspace
 
 # OS files
 Thumbs.db
 .DS_Store
 .AppleDouble
 .LSOverride
+*.pem
+.env.example.backup
 
 # Logs
 logs/
@@ -45,31 +51,58 @@ yarn-debug.log*
 yarn-error.log*
 *.pid
 *.seed
+*.pid.lock
 
-# Temporary files
+# Temporary & Cache files
 tmp/
 temp/
 .cache/
 .parcel-cache/
+.eslintcache
+.node_repl_history
 
 # Testing
 coverage/
 .nyc_output/
+.mocha_output/
 
 # Editor backup files
 *.bak
 *.backup
 *~
-
-# OS generated files
-.env.example.backup
 *.orig
+
+# Local development database/cache
+*.db
+*.sqlite
+.turbo
+
+# macOS specific
+.AppleDouble
+.LSOverride
+._*
+
+# Windows specific
+desktop.ini
+
+# Linux specific
+.directory
+
+# Node and Package Managers
+npm-debug.log
+yarn-error.log
+.npmrc
+.yarnrc
 
 # Optional IDE settings
 .vscode/settings.json
 .vscode/extensions.json
+.vscode/launch.json
+.vscode/tasks.json
 
 # Miscellaneous
 .DS_Store
-*.pem
+dist/
+build/
 .env.local.backup
+fire base-debug.log

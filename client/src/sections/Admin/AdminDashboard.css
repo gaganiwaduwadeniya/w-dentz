@@ -57,6 +57,33 @@
     border-color: #ff5252;
 }
 
+.admin-dashboard__actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-availability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: #00e5ff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-availability:hover {
+    background: rgba(0, 229, 255, 0.2);
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
 /* Container */
 .admin-dashboard__container {
     max-width: 1400px;
