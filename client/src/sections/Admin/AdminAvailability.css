@@ -166,7 +166,27 @@
 
 .item-hours-column {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.date-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.date-input:focus {
+    outline: none;
+    background: rgba(0, 229, 255, 0.1);
+    border-color: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
 }
 
 .hours-input {

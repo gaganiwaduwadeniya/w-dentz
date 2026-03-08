@@ -63,10 +63,11 @@ router.post('/', verifyToken, async (req, res) => {
         };
 
         availabilityArray.forEach(item => {
-            const { day, available, workingHours } = item;
+            const { day, available, workingHours, date } = item;
             availabilityObject[day] = {
                 available: available || false,
                 workingHours: workingHours || '',
+                date: date || '',
             };
         });
 
@@ -92,6 +93,7 @@ function getDefaultAvailability() {
         day,
         available: day !== 'Sunday',
         workingHours: '9:00 AM - 6:00 PM',
+        date: '',
     }));
 }
 

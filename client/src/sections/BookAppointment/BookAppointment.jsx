@@ -15,7 +15,6 @@ const BookAppointment = () => {
         name: '',
         email: '',
         phone: '',
-        service: '',
         date: '',
         time: '',
         message: ''
@@ -44,7 +43,7 @@ const BookAppointment = () => {
         try {
             const res = await axios.post('/api/contact', formData);
             setStatus({ type: 'success', message: res.data.message });
-            setFormData({ name: '', email: '', phone: '', service: '', date: '', time: '', message: '' });
+            setFormData({ name: '', email: '', phone: '', date: '', time: '', message: '' });
         } catch (err) {
             const msg = err.response?.data?.message || 'Something went wrong. Please try again.';
             setStatus({ type: 'error', message: msg });
@@ -52,18 +51,6 @@ const BookAppointment = () => {
             setLoading(false);
         }
     };
-
-    const services = [
-        'Consultation',
-        'Restorations (Dental fillings)',
-        'Dental Extractions',
-        'Crown and Bridges',
-        'Root Canal Treatment',
-        'Dental Scaling',
-        'Dentures',
-        'Minor Oral Surgeries',
-        'Teeth Whitening'
-    ];
 
     // Calendar generation
     const daysInMonth = (date) => {
@@ -253,21 +240,6 @@ const BookAppointment = () => {
                                         value={formData.phone}
                                         onChange={handleChange}
                                     />
-                                </div>
-                                <div className="form-field">
-                                    <label htmlFor="service">Select Service *</label>
-                                    <select
-                                        id="service"
-                                        name="service"
-                                        value={formData.service}
-                                        onChange={handleChange}
-                                        required
-                                    >
-                                        <option value="">Choose a service</option>
-                                        {services.map((svc, idx) => (
-                                            <option key={idx} value={svc}>{svc}</option>
-                                        ))}
-                                    </select>
                                 </div>
                                 <div className="form-field">
                                     <label htmlFor="time">Preferred Time *</label>

@@ -50,6 +50,7 @@ const AdminAvailability = () => {
                 day,
                 available: day !== 'Sunday',
                 workingHours: '9:00 AM - 6:00 PM',
+                date: '',
             };
         });
         setAvailability(defaultAvail);
@@ -71,6 +72,16 @@ const AdminAvailability = () => {
             [day]: {
                 ...prev[day],
                 workingHours: hours,
+            },
+        }));
+    };
+
+    const updateDate = (day, date) => {
+        setAvailability(prev => ({
+            ...prev,
+            [day]: {
+                ...prev[day],
+                date: date,
             },
         }));
     };
@@ -205,6 +216,13 @@ const AdminAvailability = () => {
 
                         {availability[day]?.available && (
                             <div className="item-hours-column">
+                                <input
+                                    type="date"
+                                    className="date-input"
+                                    value={availability[day]?.date || ''}
+                                    onChange={(e) => updateDate(day, e.target.value)}
+                                    placeholder="Optional: Specific date"
+                                />
                                 <input
                                     type="text"
                                     className="hours-input"

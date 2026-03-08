@@ -46,6 +46,7 @@ const DoctorAvailability = () => {
                 day,
                 available: day !== 'Sunday',
                 workingHours: '9:00 AM - 6:00 PM',
+                date: '',
             };
         });
         setAvailability(defaultAvail);
@@ -97,6 +98,12 @@ const DoctorAvailability = () => {
                                 <div className="availability-hours">
                                     <FiClock className="hours-icon" />
                                     <span>{dayAvail.workingHours}</span>
+                                </div>
+                            )}
+
+                            {dayAvail.available && dayAvail.date && (
+                                <div className="availability-date">
+                                    <span>{new Date(dayAvail.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                                 </div>
                             )}
                         </motion.div>
