@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
-  'https://wdentz.vercel.app', // Update with your actual Vercel URL
+  'https://wdentz.vercel.app',
+  /\.vercel\.app$/,  // Allow all Vercel preview deployments
 ];
 
 app.use(cors({
