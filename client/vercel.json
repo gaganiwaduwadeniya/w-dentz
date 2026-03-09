@@ -1,8 +1,29 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "path"
+        }
+      ],
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "file",
+          "value": false
+        }
+      ],
       "destination": "/index.html"
     }
   ]
 }
+
+
+
