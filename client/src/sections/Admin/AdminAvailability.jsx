@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiCheck, FiX, FiSave, FiRefreshCw, FiArrowLeft } from 'react-icons/fi';
 import { auth } from '../../firebaseConfig';
+import { onAuthStateChanged } from 'firebase/auth';
 import './AdminAvailability.css';
 
 const AdminAvailability = () => {
@@ -10,12 +11,24 @@ const AdminAvailability = () => {
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [message, setMessage] = useState({ type: '', text: '' });
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
 
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
+    // SECURITY: Check authentication on component mount
     useEffect(() => {
-        fetchAvailability();
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // Not authenticated - redirect to login immediately
+                window.location.href = '/admin/login';
+                return;
+            }
+            setIsAuthenticated(true);
+            fetchAvailability();
+        });
+
+        return () => unsubscribe();
     }, []);
 
     const fetchAvailability = async () => {

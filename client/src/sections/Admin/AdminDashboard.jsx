@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { auth } from '../../firebaseConfig';
-import { signOut } from 'firebase/auth';
+import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FiLogOut, FiDownload, FiTrash2, FiSearch, FiCalendar } from 'react-icons/fi';
@@ -13,10 +13,22 @@ const AdminDashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filterService, setFilterService] = useState('all');
     const [sortBy, setSortBy] = useState('newest');
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
 
+    // SECURITY: Check authentication on component mount
     useEffect(() => {
-        fetchContacts();
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // Not authenticated - redirect to login immediately
+                window.location.href = '/admin/login';
+                return;
+            }
+            setIsAuthenticated(true);
+            fetchContacts();
+        });
+
+        return () => unsubscribe();
     }, []);
 
     const fetchContacts = async () => {
