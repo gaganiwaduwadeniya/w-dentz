@@ -6,6 +6,7 @@
     align-items: center;
     padding-top: 80px;
     overflow: hidden;
+    position: relative;
 }
 
 .services__glow--1 {

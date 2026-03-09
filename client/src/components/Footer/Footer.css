@@ -5,6 +5,7 @@
     border-top: 1px solid rgba(0, 229, 255, 0.06);
     padding: 80px 0 0;
     z-index: 2;
+    overflow: hidden;
 }
 
 .footer__glow {
