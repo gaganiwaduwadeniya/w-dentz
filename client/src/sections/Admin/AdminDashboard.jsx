@@ -22,7 +22,8 @@ const AdminDashboard = () => {
     const fetchContacts = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('/api/contact');
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            const response = await axios.get(`${apiUrl}/api/contact`);
             setContacts(response.data.data || []);
             setError('');
         } catch (err) {
@@ -36,7 +37,8 @@ const AdminDashboard = () => {
     const deleteContact = async (id) => {
         if (window.confirm('Are you sure you want to delete this contact?')) {
             try {
-                await axios.delete(`/api/contact/${id}`);
+                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+                await axios.delete(`${apiUrl}/api/contact/${id}`);
                 setContacts(contacts.filter(c => c.id !== id));
             } catch (err) {
                 setError('Failed to delete contact');

@@ -41,7 +41,8 @@ const BookAppointment = () => {
         setStatus({ type: '', message: '' });
 
         try {
-            const res = await axios.post('/api/contact', formData);
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            const res = await axios.post(`${apiUrl}/api/contact`, formData);
             setStatus({ type: 'success', message: res.data.message });
             setFormData({ name: '', email: '', phone: '', date: '', time: '', message: '' });
         } catch (err) {
