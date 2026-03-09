@@ -521,14 +521,71 @@
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-top: 60px;
+        min-height: auto;
+    }
+
+    .hero__badge {
+        font-size: 0.7rem;
+        padding: 6px 14px;
+        margin-bottom: 16px;
+    }
+
+    .hero__title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: -1px;
+    }
+
+    .hero__description {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+    }
+
     .hero__consultation-text {
-        font-size: 16px;
-        padding: 10px 16px;
+        font-size: 14px;
+        padding: 10px 14px;
         border-left: 2px solid var(--color-accent-cyan);
     }
 
     .hero__social {
-        flex-direction: row;
-        align-items: center;
+        gap: 16px;
+        padding-top: 20px;
+        justify-content: center;
+    }
+
+    .hero__social-link {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+        border-radius: 10px;
+    }
+
+    .hero__tooth-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero__tooth-svg {
+        width: 160px;
+    }
+
+    .hero__tooth-ring--1 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero__tooth-ring--2 {
+        width: 270px;
+        height: 270px;
+    }
+
+    .hero__tooth-ring--3 {
+        width: 320px;
+        height: 320px;
+    }
+
+    .hero__scroll {
+        display: none;
     }
 }

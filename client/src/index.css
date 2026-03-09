@@ -249,6 +249,10 @@ img {
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
+  :root {
+    --section-padding: 80px 0;
+  }
+
   .section {
     padding: 80px 0;
   }
@@ -259,5 +263,43 @@ img {
 
   .glass-card {
     padding: 28px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 28px;
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .glass-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
   }
 }

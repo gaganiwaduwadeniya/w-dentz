@@ -101,7 +101,22 @@
 
 
 /* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .contact {
+        min-height: auto;
+    }
+
+    .contact__info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
 @media (max-width: 768px) {
+    .contact {
+        padding-top: 60px;
+    }
+
     .contact__header {
         margin-bottom: 32px;
     }
@@ -112,7 +127,11 @@
 
     .contact__info-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 12px;
+    }
+
+    .contact__info-card {
+        padding: 8px 10px;
     }
 }
 
@@ -121,7 +140,23 @@
         font-size: 1.5rem;
     }
 
+    .contact__header .section-subtitle {
+        font-size: 14px;
+    }
+
     .contact__info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact__info-card {
+        gap: 8px;
+    }
+
+    .contact__info-content h4 {
+        font-size: 0.85rem;
+    }
+
+    .contact__info-content p {
+        font-size: 0.8rem;
     }
 }

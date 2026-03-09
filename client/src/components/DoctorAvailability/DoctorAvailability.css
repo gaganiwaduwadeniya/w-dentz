@@ -189,6 +189,8 @@
 @media (max-width: 480px) {
     .availability-container {
         padding: 12px 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .availability-header h3 {
@@ -200,12 +202,12 @@
     }
 
     .availability-grid {
-        grid-template-columns: repeat(7, minmax(40px, 1fr));
-        gap: 4px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
     }
 
     .availability-card {
-        padding: 8px 4px;
+        padding: 10px 6px;
     }
 
     .availability-day {
@@ -213,7 +215,7 @@
     }
 
     .status-icon {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .status-text {
@@ -221,6 +223,13 @@
     }
 
     .availability-hours {
-        font-size: 8px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 360px) {
+    .availability-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
     }
 }

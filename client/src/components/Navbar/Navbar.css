@@ -124,7 +124,6 @@
     font-size: 0.9rem !important;
     border-radius: 50px !important;
     white-space: nowrap;
-    margin-left: -290px;
 }
 
 /* Toggle */
@@ -181,6 +180,10 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
+    .navbar {
+        padding: 16px 0;
+    }
+
     .navbar__links {
         display: none;
     }
@@ -197,7 +200,41 @@
         display: flex;
     }
 
+    .navbar__mobile-link {
+        font-size: 1.4rem;
+        padding: 16px 20px;
+    }
+
     .navbar__logo-text {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar__logo-text {
+        font-size: 1.3rem;
+    }
+
+    .navbar__logo-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .navbar__toggle {
+        font-size: 1.5rem;
+        padding: 6px;
+    }
+
+    .navbar__mobile {
+        padding: 100px 24px 24px;
+    }
+
+    .navbar__mobile-link {
+        font-size: 1.2rem;
+        padding: 14px 16px;
     }
 }

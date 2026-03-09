@@ -166,8 +166,18 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
+    .services {
+        min-height: auto;
+    }
+
     .services__grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .services__card {
+        height: auto;
+        min-height: 160px;
     }
 
     .services__cta {
@@ -182,7 +192,41 @@
 }
 
 @media (max-width: 600px) {
+    .services {
+        padding-top: 60px;
+    }
+
     .services__grid {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .services__card {
+        height: auto;
+        min-height: auto;
+        padding: 16px 14px;
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .services__card-icon {
+        margin-bottom: 0;
+        min-width: 32px;
+    }
+
+    .services__card-tag {
+        top: 8px;
+        right: 8px;
+        font-size: 0.55rem;
+        padding: 2px 8px;
+    }
+
+    .services__card-title {
+        font-size: 0.9rem;
+    }
+
+    .services__card-desc {
+        font-size: 0.75rem;
     }
 }

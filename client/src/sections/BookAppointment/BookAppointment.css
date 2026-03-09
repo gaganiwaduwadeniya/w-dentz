@@ -46,7 +46,8 @@
 .book-appointment__form {
     padding: 32px;
     border-radius: 16px;
-    height: 600px;
+    height: auto;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -339,7 +340,7 @@
 }
 
 .book-appointment__availability-wrapper .availability-grid {
-    grid-template-columns: repeat(7, minmax(45px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 8px;
 }
 
@@ -449,7 +450,7 @@
     }
 
     .book-appointment__availability-wrapper .availability-grid {
-        grid-template-columns: repeat(7, minmax(40px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     }
 
     .book-appointment__calendar-wrapper {
@@ -512,8 +513,8 @@
     }
 
     .book-appointment__availability-wrapper .availability-grid {
-        grid-template-columns: repeat(7, minmax(35px, 1fr));
-        gap: 8px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
     }
 
     .book-appointment__availability-wrapper .availability-card {
@@ -534,5 +535,26 @@
 
     .book-appointment__availability-wrapper .availability-hours {
         font-size: 9px;
+    }
+}
+
+@media (max-width: 360px) {
+    .book-appointment__form {
+        padding: 12px;
+    }
+
+    .form-title {
+        font-size: 16px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .book-appointment__availability-wrapper .availability-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
