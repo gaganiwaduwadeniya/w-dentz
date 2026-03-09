@@ -89,13 +89,6 @@ img {
   display: block;
 }
 
-/* ---- Layout ---- */
-#root,
-.app {
-  overflow-x: hidden;
-  width: 100%;
-}
-
 /* ---- Utility ---- */
 .container {
   max-width: var(--container-max);
